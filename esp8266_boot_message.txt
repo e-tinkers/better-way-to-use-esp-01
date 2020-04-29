@@ -1,0 +1,9 @@
+ets Jan  8 2013,rst cause:4, boot mode:(3,1)
+
+wdt reset
+load 0x4010f000, len 1392, room 16
+tail 0
+chksum 0xd0
+csum 0xd0
+v3d128e5c
+~ld
