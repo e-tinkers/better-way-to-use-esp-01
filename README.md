@@ -15,10 +15,10 @@ There is a better way to use ESP-01 with a hybrid solution, allowing a Host MCU 
 
 [![ESP32 ADC linearity](https://github.com/e-tinkers/better-way-to-use-esp-01/blob/master/images/connection-between-host-and-esp-01.png)](https://github.com/e-tinkers/better-way-to-use-esp-01/blob/master/images/connection-between-host-and-esp-01.png)
 
-*** Host Serial Controller ***
+**Host Serial Controller**
 
 The Host is a simple serial state machine implementation to determine the states of the ESP-01, and executes instructions accordingly. The state machine is high customizable to handle more states based on your actual application. Both Host and ESP-01 can go into deep sleep, and a GPIO pin can be used to wake-up/reset ESP-01.
 
-*** ESP-01 Web Client ***
+**ESP-01 Web Client**
 
 A similar serial state machine is implemnted to wait for incomming message from Host, once it is received the incoming message, it established a HTTPS web client and send the incoming message as a POST request payload to a web server. Upon the completion of sending the POST request, the ESP-01 could go into deep sleep to reduce power consumption. ESP-01 sends two states to the Host, 1) when the WiFi is ready; 2) when it completed all the tasks and ready to go into sleep mode.
