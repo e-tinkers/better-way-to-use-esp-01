@@ -1,4 +1,4 @@
-## Better way to use ESP-01
+## Better way to use ESP-01 as a WiFi shield
 This repo is a proof-of-concept for a better way of using ESP-01 as a WiFi shield for IoT project.
 
 ### What this is about?
@@ -10,7 +10,7 @@ In this case you communicate with the ESP-01 via AT commands. And ESP-01 by defa
 ### Uses it as a stand-alone MCU like an Arduino
 The ESP-01 can be used as a stand-alone MCU by flashing it with an Arduino Core (or other implementations such as micropython or RTOS). The ESP-01 however has limited hardware interface to be meaningful for any realistic project.
 
-### Better way of using ESP-01
+### Better way of using ESP-01 as a WiFi Shield
 There is a better way to use ESP-01 with a hybrid solution, allowing a Host MCU such as an Arduino to use the ESP-01 as a WiFi shield. The ESP01 will responsible for handling all the WiFi and communication with outside world, even SSL connectivity.  The Host take care of the interface with all sensors. The host and ESP-01 communicated with each other via a simple serial interface.
 
 [![ESP32 ADC linearity](https://github.com/e-tinkers/better-way-to-use-esp-01/blob/master/images/connection-between-host-and-esp-01.png)](https://github.com/e-tinkers/better-way-to-use-esp-01/blob/master/images/connection-between-host-and-esp-01.png)
@@ -23,4 +23,4 @@ The Host is a simple serial state machine implementation to determine the states
 
 Instead of utilizing the original AT-command firmware, the ESP-01 is operated as an stand-alone Arduino with a similar serial state machine that waits for incomming message from Host, once it is received the incoming message, it established a HTTPS web client and send the incoming message as a POST request payload to a web server. Upon the completion of sending the POST request, the ESP-01 could go into deep sleep to reduce power consumption. ESP-01 sends two states to the Host, 1) when the WiFi is ready; 2) when it completed all the tasks and ready to go into sleep mode.
 
-More detail explanation for the reason behind this approach is discussed in more detail in my [blog](https://www.e-tinkers.com/2020/04/better-way-to-use-esp-01).
+More detail explanation for the reason behind this approach is discussed in more detail in my [blog](https://www.e-tinkers.com/2020/04/better-way-to-use-esp-01-as-a-wifi-shield).
