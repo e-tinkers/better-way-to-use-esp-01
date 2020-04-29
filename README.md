@@ -23,4 +23,4 @@ The Host is a simple serial state machine implementation to determine the states
 
 Instead of utilizing the original AT-command firmware, the ESP-01 is operated as an stand-alone Arduino with a similar serial state machine that waits for incomming message from Host, once it is received the incoming message, it established a HTTPS web client and send the incoming message as a POST request payload to a web server. Upon the completion of sending the POST request, the ESP-01 could go into deep sleep to reduce power consumption. ESP-01 sends two states to the Host, 1) when the WiFi is ready; 2) when it completed all the tasks and ready to go into sleep mode.
 
-More detail explanation for the reason behind this approach is discussed in more detail in my [blog](https://www.e-tinkers.com/2020/04/better-way-to-use-esp-01-as-a-wifi-shield).
+More detail explanation for the reason behind this approach is discussed in more detail in my [blog](https://www.e-tinkers.com/2020/04/a-better-way-to-use-esp-01-as-wifi-shield/).
