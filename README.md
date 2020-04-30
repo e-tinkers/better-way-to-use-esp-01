@@ -4,8 +4,8 @@ This repo is a proof-of-concept for a better way of using ESP-01 as a WiFi shiel
 ### What this is about?
 There are generally two ways of using an ESP-01 module:
 
-    Uses it as a WiFi shield;
-    Uses it as a sand-alone MCU.
+- Uses it as a WiFi shield;
+- Uses it as a sand-alone MCU.
 
 ### Uses it as a Wifi shield
 In this case you communicate with the ESP-01 via AT commands. And ESP-01 by default came with the firmware for handling the AT commands. Parsing of the AT commands is tedious and slow, although this can be overcomed by using a good library like [LiteESP8266Client](https://github.com/e-tinkers/LiteESP8266Client), however, most of the AT command libraries do not support SSL. To implment SSL connectivity is complicate if not impossible, and would requires re-flash of ESP-01 to add SSL keys. If you are using an MCU like Arduino Uno, it will simply not have sufficient memory to handle SSL key or even http response sent back from a server.
