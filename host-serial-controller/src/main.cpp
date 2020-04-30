@@ -15,7 +15,7 @@ SoftwareSerial espSerial(2, 3);  // rx, tx
 void processData() {
   Serial.println(incomingMsg);
   if (strcmp(incomingMsg, "Wifi Ready") == 0) {
-    char data[55] = "{\"temp\":33.3, \"ph\": 88.8, \"ec\":1.8, \"battery\":3.3}\n";
+    char data[55] = "{\"temp\":23.3, \"ph\":5.8, \"ec\":1.8, \"battery\":3.3}\n";
     espSerial.print(data);
     return;
   }
